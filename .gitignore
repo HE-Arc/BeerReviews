@@ -5,7 +5,7 @@
 beerreviews/beerreviews/.env
 
 ### PyCharm ###
-idea/
+.idea/
 
 ### Django ###
 *.log
