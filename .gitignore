@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/django,python
 
+### Settings ###
+beerreviews/beerreviews/.env
+
 ### PyCharm ###
 idea/
 
