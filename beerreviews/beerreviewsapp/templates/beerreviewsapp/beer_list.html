@@ -1,0 +1,14 @@
+{% extends 'beerreviewsapp/base.html' %}
+{% block title %}Beer list{% endblock %}
+{% block content %}
+<h1> Our beers </h1>
+<div class="ui relaxed divided list">
+{% for beer in beer_list %}
+<div class="item">
+  <div class="content">
+    <a class="header" href="/beer/{{beer.id}}">{{beer.name}}</a>
+    <div class="description">{{beer.maker.name}}</div>
+  </div>
+</div>
+    {% endfor %}
+{% endblock %}

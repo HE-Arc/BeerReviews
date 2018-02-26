@@ -20,4 +20,6 @@ from beerreviewsapp import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
+    path('beers/', views.BeerListView.as_view(), name="Beers list"),
+    path('beer/<pk>', views.BeerDetailView.as_view(), name="Beer detail"),
 ]

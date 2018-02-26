@@ -1,0 +1,13 @@
+{% extends 'beerreviewsapp/base.html' %}
+{% block content %}
+<div class="ui container">
+  <div class="ui">
+    <div class="beer">
+      <img class="ui medium left floated circular image" src="{{beer.imgsrc}}"}>
+      <h2>{{beer.name}}</h2>
+      <h3>{{beer.maker.name}}</h3>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
