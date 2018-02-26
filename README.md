@@ -7,8 +7,13 @@ https://docs.google.com/document/d/1cmlz5GmnrAaOqnjyCHOZkS_mgMEQBeXUotX54O-hQQM/
 ### Deployment : 
 
 ```shell
-pip install requirements.txt
+pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
+```
+
+Loading placeholders : 
+```
+python manage.py loaddata path/to/fixtures.json
 ```
