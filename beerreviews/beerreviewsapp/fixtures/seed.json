@@ -8,14 +8,6 @@
     }
   },
   {
-    "pk" : 1,
-    "model" : "beerreviewsapp.country",
-    "fields" :
-    {
-      "name" : "Canada"
-    }
-  },
-  {
     "model" : "beerreviewsapp.style",
     "pk" : 1,
     "fields" :
@@ -39,9 +31,9 @@
       "name" : "Fin du Monde",
       "description" : "To date, La Fin du Monde has earned more medals and awards in major international competitions than any other Canadian beer. It is Unibroue's international flagship ale.",
       "style" : 1,
-      "country" : 1,
       "maker" : 1,
       "ebc" : 19,
+      "country" : "CA",
       "imgsrc" : "https://www.lebonsiropderable.com/wp-content/uploads/2015/07/biere-quebec_La-Fin-du-Monde-Unibroue_le-bon-sirop-d-erable.jpg"
     }
   },
@@ -53,9 +45,9 @@
       "name" : "Trois Pistoles",
       "description" : "Due to its complex character, this beer immediately attracted a lot of fans. Its fruity notes and high alcohol level often draw comparisons to port.",
       "style" : 2,
-      "country" : 1,
       "maker" : 1,
       "ebc" : 15,
+      "country" : "CA",
       "imgsrc" : "https://www.unibroue-france.fr/wp-content/uploads/2017/10/Bi%C3%A8re-3-pistoles.jpg"
     }
   }
