@@ -2,6 +2,14 @@
 	padding: 5em 0em;
 }
 
+.tobepadded.a {
+	padding: 0.5em;
+}
+
+.tobepadded.div {
+	padding: 0.5em;
+}
+
 @media only screen and (max-width: 700px) {
 
 	.hm {
