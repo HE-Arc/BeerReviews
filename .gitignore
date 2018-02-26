@@ -1,6 +1,11 @@
 
 # Created by https://www.gitignore.io/api/django,python
 
+### Migrations ### 
+
+beerreviews/beerreviewsapp/migrations
+
+
 ### Settings ###
 beerreviews/beerreviews/.env
 
