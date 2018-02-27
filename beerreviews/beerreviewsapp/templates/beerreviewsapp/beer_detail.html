@@ -12,6 +12,17 @@
       <p>{{beer.description}}</p>
       <a href="{{beer.pk}}/rate" class="ui button red">Rate this beer</a>
     </div>
+    <div class="ui reviews container">
+      <h2>Reviews</h2>
+      <div class="ui list">
+      {% for r in beer.review_set.all %}
+      <div class="item">
+        <a class="ui header">{{r.user.username}}</a><div  class ="stars-container">{{r.rating}}</div>
+        <p>{{r.content}}</p>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

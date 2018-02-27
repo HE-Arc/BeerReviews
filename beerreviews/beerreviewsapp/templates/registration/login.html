@@ -1,0 +1,13 @@
+{% extends 'beerreviewsapp\base.html' %}
+{% block title %}Login{% endblock %}
+<!-- https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html -->
+<div class="ui container">
+  {% block content %}
+    <h2>Login</h2>
+    <form class="ui form" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="ui button" type="submit">Login</button>
+    </form>
+  {% endblock %}
+</div>

@@ -30,9 +30,16 @@
          <a class="active item" href="/beers">Home</a>
          <a class="item">Top 50</a>
          <a class="item">Rate a beer</a>
-         <div class="right item tobepadded">
-           <a class="ui inverted button">Log in</a>
+         <div class="right bottom item tobepadded">
+           {% if user.is_authenticated %}
+           <div class="ui inverted">
+             <p class="ui">Welcome,  {{ user.username }}</p>
+             <a class="ui inverted button" href="../logout/">Logout</a>
+           </div>
+           {% else %}
+           <a class="ui inverted button" href="../login">Log in</a>
            <a class="ui inverted button">Sign Up</a>
+           {% endif %}
            <div class="ui search hm">
            <input class="prompt" placeholder="Search beers..." type="text">
            <div class="results"></div>

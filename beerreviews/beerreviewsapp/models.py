@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
+from datetime import datetime  
 
 DEFAULT_LENGTH = 100
 URL_LENGTH = 255
@@ -36,6 +37,6 @@ class Beer(models.Model):
 class Review(models.Model):
     rating = models.IntegerField()
     content = models.TextField()
-    date = models.DateField()
+    date = models.DateField(default=datetime.now(), blank=True)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     beer = models.ForeignKey(Beer, on_delete = models.CASCADE)
