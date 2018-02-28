@@ -1,0 +1,38 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$100000$o1lsrtXyVoGh$L2b7e/mGGXRm6cSpAjKKQsr/KlAmt1PZmKtACQ9zDQY=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@admin.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2018-02-28T22:19:32.182Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$100000$V1YojyQ4KYCT$QfB77xP3LBQLConxEbAuUT3rtPKbQtA9c3xSShWcYoQ=",
+      "last_login": "2018-02-28T22:55:26.390Z",
+      "is_superuser": false,
+      "username": "Axel",
+      "first_name": "Axel",
+      "last_name": "Rieben",
+      "email": "axel.rieben@he-arc.ch",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2018-02-28T22:55:26.172Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

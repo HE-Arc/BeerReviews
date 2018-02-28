@@ -13,7 +13,7 @@
     "model": "beerreviewsapp.review",
     "pk": 2,
     "fields": {
-      "user": 1,
+      "user": 2,
       "content": "lol me too dude",
       "rating": 4,
       "beer": 1
