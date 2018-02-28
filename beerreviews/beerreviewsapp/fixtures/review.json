@@ -1,0 +1,22 @@
+[
+  {
+    "model": "beerreviewsapp.review",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "content": "I woke up in a thai restaurant's laundry in Biel after drinking this one. 10/10 would buy again",
+      "rating": 5,
+      "beer": 1
+    }
+  },
+  {
+    "model": "beerreviewsapp.review",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "content": "lol me too dude",
+      "rating": 4,
+      "beer": 1
+    }
+  }
+]

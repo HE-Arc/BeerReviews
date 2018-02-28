@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
-from datetime import datetime  
+from django.utils import timezone
 
 DEFAULT_LENGTH = 100
 URL_LENGTH = 255
@@ -26,7 +26,9 @@ class Beer(models.Model):
     """ What did you expect ? """
     name = models.CharField(max_length = DEFAULT_LENGTH)
     description = models.TextField()
-    ebc = models.IntegerField()
+    abv = models.FloatField(null=True) #Alcool by volume
+    ebc = models.IntegerField(null=True) #European Brewery Convention
+    ibu = models.IntegerField(null=True) #International Bitterness Unit
     style = models.ForeignKey(Style, on_delete = models.CASCADE)
     maker = models.ForeignKey(Maker, on_delete = models.CASCADE)
     country = CountryField(blank_label='(select country)')
@@ -37,6 +39,6 @@ class Beer(models.Model):
 class Review(models.Model):
     rating = models.IntegerField()
     content = models.TextField()
-    date = models.DateField(default=datetime.now(), blank=True)
+    date = models.DateField(default=timezone.now, blank=True)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     beer = models.ForeignKey(Beer, on_delete = models.CASCADE)

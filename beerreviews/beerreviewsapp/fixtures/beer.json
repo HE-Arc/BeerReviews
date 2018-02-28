@@ -1,0 +1,44 @@
+[
+  {
+    "model": "beerreviewsapp.beer",
+    "pk": 1,
+    "fields": {
+      "name": "Fin du Monde",
+      "description": "To date, La Fin du Monde has earned more medals and awards in major international competitions than any other Canadian beer. It is Unibroue's international flagship ale.",
+      "style": 1,
+      "maker": 1,
+      "abv": 9,
+      "ibu": 19,
+      "country": "CA",
+      "imgsrc": "https://www.lebonsiropderable.com/wp-content/uploads/2015/07/biere-quebec_La-Fin-du-Monde-Unibroue_le-bon-sirop-d-erable.jpg"
+    }
+  },
+  {
+    "model": "beerreviewsapp.beer",
+    "pk": 2,
+    "fields": {
+      "name": "Trois Pistoles",
+      "description": "Due to its complex character, this beer immediately attracted a lot of fans. Its fruity notes and high alcohol level often draw comparisons to port.",
+      "style": 2,
+      "maker": 1,
+      "abv": 9,
+      "ibu": 16,
+      "country": "CA",
+      "imgsrc": "https://www.unibroue-france.fr/wp-content/uploads/2017/10/Bi%C3%A8re-3-pistoles.jpg"
+    }
+  },
+  {
+    "model": "beerreviewsapp.beer",
+    "pk": 3,
+    "fields": {
+      "name": "Guinness Draught",
+      "description": "Rich and creamy. Distinctively black. Velvety in its finish. This iconic beer is defined by harmony. Sip after sip, sweet counters bitter as the malt arrives on cue to complement a base of roasted barley. Just as the unmistakable white head sits flush atop the dark beer, so do the flavours counter and combine perfectly. This is our greatest innovation. Truly unique. Perfectly balanced.",
+      "style": 3,
+      "maker": 2,
+      "abv": 4.2,
+      "ibu": 45,
+      "country": "IE",
+      "imgsrc": "https://www.guinness.com/media/1585/pdp_1440x900__0001_guinness_draught_spritz2_bottle.png?anchor=center&mode=crop&quality=75&width=1440"
+    }
+  }
+]
