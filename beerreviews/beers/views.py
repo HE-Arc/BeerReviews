@@ -3,11 +3,6 @@ from django.views import generic
 
 from .models import Beer
 
-
-def index(request):
-    return HttpResponse("Hello, world")
-
-
 ### Beers
 class BeerListView(generic.ListView):
     model = Beer
