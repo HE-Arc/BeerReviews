@@ -1,20 +1,20 @@
 [
   {
-    "model": "beerreviewsapp.style",
+    "model": "beers.style",
     "pk": 1,
     "fields": {
       "name": "Triple"
     }
   },
   {
-    "model": "beerreviewsapp.style",
+    "model": "beers.style",
     "pk": 2,
     "fields": {
       "name": "Strong Dark Belgium Beer"
     }
   },
     {
-    "model": "beerreviewsapp.style",
+    "model": "beers.style",
     "pk": 3,
     "fields": {
       "name": "Stout"

@@ -1,6 +1,6 @@
 [
   {
-    "model": "beerreviewsapp.review",
+    "model": "beers.review",
     "pk": 1,
     "fields": {
       "user": 1,
@@ -10,7 +10,7 @@
     }
   },
   {
-    "model": "beerreviewsapp.review",
+    "model": "beers.review",
     "pk": 2,
     "fields": {
       "user": 2,

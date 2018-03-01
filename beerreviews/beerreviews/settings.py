@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#LOGIN_REDIRECT_URL = 'BeerListView'
+LOGIN_REDIRECT_URL = 'index'
 
 FIXTURE_DIRS = (
    '../fixtures',
@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
-    'beerreviewsapp'
+    'beers',
+    'users',
+    'beerreviews'
 ]
 
 MIDDLEWARE = [

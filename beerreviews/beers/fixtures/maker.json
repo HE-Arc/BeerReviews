@@ -1,13 +1,13 @@
 [
   {
-    "model": "beerreviewsapp.maker",
+    "model": "beers.maker",
     "pk": 1,
     "fields": {
       "name": "Unibroue"
     }
   },
   {
-    "model": "beerreviewsapp.maker",
+    "model": "beers.maker",
     "pk": 2,
     "fields": {
       "name": "Guinness"

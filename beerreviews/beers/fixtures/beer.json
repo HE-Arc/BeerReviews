@@ -1,6 +1,6 @@
 [
   {
-    "model": "beerreviewsapp.beer",
+    "model": "beers.beer",
     "pk": 1,
     "fields": {
       "name": "Fin du Monde",
@@ -14,7 +14,7 @@
     }
   },
   {
-    "model": "beerreviewsapp.beer",
+    "model": "beers.beer",
     "pk": 2,
     "fields": {
       "name": "Trois Pistoles",
@@ -28,7 +28,7 @@
     }
   },
   {
-    "model": "beerreviewsapp.beer",
+    "model": "beers.beer",
     "pk": 3,
     "fields": {
       "name": "Guinness Draught",

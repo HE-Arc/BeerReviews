@@ -35,11 +35,11 @@
                     {% if user.is_authenticated %}
                     <div class="ui inverted">
                         <p class="ui">Welcome, {{ user.username }}</p>
-                        <a class="ui inverted button" href="../logout/">Logout</a>
+                        <a class="ui inverted button" href="{% url 'users:logout' %}">Logout</a>
                     </div>
                     {% else %}
-                    <a class="ui inverted button" href="../login/">Log in</a>
-                    <a class="ui inverted button"  href="../signup/">Sign Up</a>
+                    <a class="ui inverted button" href="{% url 'users:login' %}">Log in</a>
+                    <a class="ui inverted button"  href="{% url 'users:signup' %}">Sign Up</a>
                     {% endif %}
                     <div class="ui search hm">
                         <input class="prompt" placeholder="Search beers..." type="text">

@@ -1,7 +1,7 @@
-from django.db import models
 from django.contrib.auth.models import User
-from django_countries.fields import CountryField
+from django.db import models
 from django.utils import timezone
+from django_countries.fields import CountryField
 
 DEFAULT_LENGTH = 100
 URL_LENGTH = 255
