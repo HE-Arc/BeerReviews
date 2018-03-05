@@ -4,6 +4,8 @@ from django.views import generic
 from .models import Beer
 
 ### Beers
+
+
 class BeerListView(generic.ListView):
     model = Beer
 

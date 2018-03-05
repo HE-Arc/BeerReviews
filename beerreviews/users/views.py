@@ -1,5 +1,6 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
+import beerreviews
 
 # sign up
 from users.forms import SignUpForm
@@ -18,3 +19,8 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
+
+
+def signout(request):
+    logout(request)
+    return redirect('/')
