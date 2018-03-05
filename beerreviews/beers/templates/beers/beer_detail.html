@@ -8,24 +8,64 @@
             <img class="beer-image ui medium left floated circular image" src="{{beer.imgsrc}}" }>
             <h2>{{beer.name}}</h2>
             <h3>{{beer.maker.name}}</h3>
-            <h4><em>Style :</em> {{beer.style.name}}</h4>
-            <h5><em>EDC :</em> {{beer.ebc}}</h5>
-            <p>{{beer.description}}</p>
-            <a href="{{beer.pk}}/rate" class="ui button red">Rate this beer</a>
+            <h5><em>Style :</em> {{beer.style.name}}</h5>
+            <h5><em>ABV :</em> {{beer.abv}} %</h5>
+            <h5><em>EBC :</em> {{beer.ebc}}</h5>
+            <h5><em>IBU :</em> {{beer.ibu}}</h5>
         </div>
+
+        <div class="ui beer container">
+            <h3>Description :</h3>
+            <p>{{beer.description}}</p>
+        </div>
+
         <div class="ui reviews container">
-            <h2>Reviews</h2>
-            <div class="ui list">
-                {% for r in beer.review_set.all %}
-                <div class="item">
-                    <a class="ui header">{{r.user.username}}</a>
-                    <div class="stars-container">{{r.rating}}</div>
-                    <p>{{r.content}}</p>
+            <h3>Rate this beer :</h3>
+            <div class="ui form">
+                <div class="inline fields">
+                    <div class="ten wide field">
+                        <label>Comment</label>
+                        <textarea rows="2"></textarea>
+                    </div>
+                    <div class="six wide field">
+                        <label>Note</label>
+                        <div class="ui selection dropdown">
+                            <input name="note" type="hidden">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">5</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">1</div>
+                                <div class="item" data-value="2">2</div>
+                                <div class="item" data-value="3">3</div>
+                                <div class="item" data-value="4">4</div>
+                                <div class="item" data-value="5">5</div>
+                                <div class="item" data-value="6">6</div>
+                                <div class="item" data-value="7">7</div>
+                                <div class="item" data-value="8">8</div>
+                                <div class="item" data-value="9">9</div>
+                                <div class="item" data-value="10">10</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {% endfor %}
+                <a href="{{beer.pk}}/rate" class="ui button red">Rate</a>
             </div>
+        </div>
+
+    </div>
+    <div class="ui reviews container">
+        <h2>Reviews</h2>
+        <div class="ui list">
+            {% for r in beer.review_set.all %}
+            <div class="item">
+                <a class="ui header">{{r.user.username}}</a>
+                <div class="stars-container">{{r.rating}}</div>
+                <p>{{r.content}}</p>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
+
 
 {% endblock %}
