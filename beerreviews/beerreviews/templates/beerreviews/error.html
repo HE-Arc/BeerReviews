@@ -1,0 +1,14 @@
+{% if error_message %}
+
+<div class="ui error message">
+    <i class="close icon"></i>
+    <div class="header">
+        There were some errors with your submission
+    </div>
+    <ul class="list">
+        <li>{{ error_message }}</li>
+    </ul>
+</div>
+
+
+{% endif %}
