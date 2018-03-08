@@ -1,8 +1,10 @@
 {% extends 'beerreviews/base.html' %}
 {% block content %}
 
-<div class="ui container ">
+<div class="ui container">
     <div class="ui">
+
+        <!--Beer informations-->
         <div class="beer">
             <img src="{{beer.country.flag}}">
             <img class="beer-image ui medium left floated circular image" src="{{beer.imgsrc}}" }>
@@ -15,21 +17,22 @@
         </div>
 
         <div class="ui beer container">
-            <h3>Description :</h3>
+            <h3>Description</h3>
             <p>{{beer.description}}</p>
         </div>
 
+        <!-- Review form  -->
         <div class="ui reviews container">
-            <h3>Rate this beer :</h3>
+            <h3 class="ui dividing header">Rate this beer</h3>
             <div>
-                <form class="ui form" method="post" action="{% url 'beers:create_review' beer.id %}">
+                <form class="ui reply form" method="post" action="{% url 'beers:create_review' beer.id %}">
                     {% csrf_token %}
                     <div class="inline fields">
-                        <div class="ten wide field">
+                        <div class="twelve wide field">
                             <label>Comment</label>
-                            <textarea name="comment" rows="2" maxlength="512"></textarea>
+                            <textarea name="comment" maxlength="512"></textarea>
                         </div>
-                        <div class="six wide field">
+                        <div class="four wide field">
                             <label>Rating</label>
                             <select class="ui dropdown" name="rating">
                                 <option value="1">1</option>
@@ -40,27 +43,37 @@
                             </select>
                         </div>
                     </div>
-                    <button class="ui button red" type="submit">Rate</button>
+
+                    <button class="ui blue labeled submit icon button" type="submit"><i class="icon edit"></i> Rate
+                    </button>
                 </form>
                 {% include 'beerreviews/error.html' %}
             </div>
         </div>
-    </div>
 
-</div>
-<div class="ui reviews container">
-    <h2>Reviews</h2>
-    <div class="ui list">
-        {% for r in beer.review_set.all %}
-        <div class="item">
-            <a class="ui header">{{r.user.username}}</a>
-            <div class="stars-container">{{r.rating}}</div>
-            <p>{{r.content}}</p>
+        <!--Reviews section-->
+        <div class="ui comments container">
+            <h3 class="ui dividing header">Reviews</h3>
+            {% for r in beer.review_set.all %}
+            <div class="comment">
+                <!--<a class="avatar">-->
+                <!--<img class="ui small circular image">-->
+                <!--</a>-->
+                <div class="content">
+                    <a class="author">{{r.user.username}}</a>
+                    <div class="metadata">
+                        <span class="date">{{r.date}}</span>
+                    </div>
+                    <div class="stars-container">{{r.rating}}</div>
+                    <div class="text">
+                        {{r.content}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+
     </div>
 </div>
-</div>
-
 
 {% endblock %}
