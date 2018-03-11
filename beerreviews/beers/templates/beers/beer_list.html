@@ -3,7 +3,10 @@
 {% block title %}Beer list{% endblock %}
 {% block content %}
 
-<h1> Our beers </h1>
+<h1 class="ui dividing header">
+    Our beers
+</h1>
+
 <div class="ui relaxed divided list">
     {% for beer in beer_list %}
     <div class="item">

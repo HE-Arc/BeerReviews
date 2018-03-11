@@ -3,15 +3,40 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
+<h1 class="ui dividing header">
+    Latest beers
+</h1>
 
 {% if latest_beers_list %}
-    <ul>
+
+<div class="ui three stackable cards">
+
     {% for beer in latest_beers_list %}
-        <li><a href="{% url 'beers:detail' beer.id %}">{{ beer.name }}</a></li>
+
+    <div class="card">
+        <a class="image" href="{% url 'beers:detail' beer.id %}">
+            <img src="{{beer.imgsrc}}">
+        </a>
+        <div class="content">
+            <div class="header">{{beer.name}}</div>
+            <div class="meta">
+                <a>{{beer.style.name}}</a>
+            </div>
+            <div class="description">
+                {{beer.description}}
+            </div>
+        </div>
+        <div class="extra content">
+            <span class="right floated"> {{beer.created_at}} </span>
+        </div>
+    </div>
+
     {% endfor %}
-    </ul>
+
+</div>
+
 {% else %}
-    <p>No beers are available.</p>
+<p>No beers are available.</p>
 {% endif %}
 
 {% endblock %}
