@@ -38,6 +38,7 @@ class Beer(models.Model):
     maker = models.ForeignKey(Maker, on_delete = models.CASCADE)
     country = CountryField(blank_label='(select country)')
     imgsrc = models.CharField(max_length = URL_LENGTH, default = "https://cdn4.iconfinder.com/data/icons/proglyphs-food/512/Beer-512.png")
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
