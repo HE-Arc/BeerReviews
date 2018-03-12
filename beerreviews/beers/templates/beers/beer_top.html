@@ -9,20 +9,38 @@
 
 {% if top_beers_list %}
 
-<div class="ui relaxed divided list">
-    {% for beer in top_beers_list %}
-    <div class="item">
-        <div class="content">
-            <a class="header" href="{% url 'beers:detail' beer.id %}">{{beer.name}}</a>
-            <div class="description">{{beer.maker.name}}</div>
-            <div class="description"> Rating : {{beer.rating}}</div>
+{% for beer in top_beers_list %}
+{% if beer.rating %}
+
+<h2 class="ui header">
+    {{ forloop.counter }}
+</h2>
+
+<div class="ui centered card">
+    <a class="image" href="{% url 'beers:detail' beer.id %}">
+        <img src="{{beer.imgsrc}}">
+    </a>
+    <div class="content">
+        <div class="header">{{beer.name}}</div>
+        <div class="meta">
+            <a>{{beer.style.name}}</a>
+        </div>
+        <div class="description">
+            {{beer.description}}
         </div>
     </div>
-    {% endfor %}
+    <div class="extra content">
+        <span class="right floated"> {{beer.rating}}/5 </span>
+    </div>
 </div>
 
-{% else %}
-<p>No beers are available.</p>
 {% endif %}
+{% endfor %}
 
+
+{% else %}
+
+<p>No beers are available.</p>
+
+{% endif %}
 {% endblock %}
