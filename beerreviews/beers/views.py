@@ -9,9 +9,7 @@ from django.views import generic
 from .models import Beer, Review
 
 
-### Beers
-
-
+### Our beers
 class BeerListView(generic.ListView):
     model = Beer
 
@@ -19,6 +17,7 @@ class BeerListView(generic.ListView):
         return Beer.objects.all()
 
 
+### Detail of a beer
 class BeerDetailView(generic.DetailView):
     model = Beer
 
@@ -30,7 +29,7 @@ class TopListView(generic.ListView):
     model = Beer
 
     def get_queryset(self):
-        return Beer.objects.order_by('rating')
+        return Beer.objects.order_by('-rating')
 
 
 ### Reviews
@@ -41,6 +40,7 @@ def create_review(request, beer_id):
     if request.user.is_authenticated:
         review = Review(rating=request.POST['rating'], content=request.POST['comment'], beer=beer, user=request.user)
         review.save()
+        beer.save()
     else:
         return render(request, 'beers/beer_detail.html', {
             'beer': beer,

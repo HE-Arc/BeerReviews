@@ -7,8 +7,10 @@
     Best 10 beers
 </h1>
 
+{% if top_beers_list %}
+
 <div class="ui relaxed divided list">
-    {% for beer in beer_list %}
+    {% for beer in top_beers_list %}
     <div class="item">
         <div class="content">
             <a class="header" href="{% url 'beers:detail' beer.id %}">{{beer.name}}</a>
@@ -18,5 +20,9 @@
     </div>
     {% endfor %}
 </div>
+
+{% else %}
+<p>No beers are available.</p>
+{% endif %}
 
 {% endblock %}
