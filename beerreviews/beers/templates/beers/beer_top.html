@@ -1,0 +1,22 @@
+{% extends 'beerreviews/base.html' %}
+
+{% block title %}Top 10{% endblock %}
+{% block content %}
+
+<h1 class="ui dividing header">
+    Best 10 beers
+</h1>
+
+<div class="ui relaxed divided list">
+    {% for beer in beer_list %}
+    <div class="item">
+        <div class="content">
+            <a class="header" href="{% url 'beers:detail' beer.id %}">{{beer.name}}</a>
+            <div class="description">{{beer.maker.name}}</div>
+            <div class="description"> Rating : {{beer.rating}}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

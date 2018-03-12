@@ -1,3 +1,6 @@
+from datetime import timezone
+
+from django.db.models import Avg
 from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
@@ -18,6 +21,16 @@ class BeerListView(generic.ListView):
 
 class BeerDetailView(generic.DetailView):
     model = Beer
+
+
+### Top 10
+class TopListView(generic.ListView):
+    template_name = 'beers/beer_top.html'
+    context_object_name = 'top_beers_list'
+    model = Beer
+
+    def get_queryset(self):
+        return Beer.objects.order_by('rating')
 
 
 ### Reviews

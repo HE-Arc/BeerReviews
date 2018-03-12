@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models import Avg
 from django.utils import timezone
 from django_countries.fields import CountryField
 
@@ -39,9 +40,14 @@ class Beer(models.Model):
     country = CountryField(blank_label='(select country)')
     imgsrc = models.CharField(max_length = URL_LENGTH, default = "https://cdn4.iconfinder.com/data/icons/proglyphs-food/512/Beer-512.png")
     created_at = models.DateTimeField(auto_now_add=True)
+    rating = models.FloatField(null=True, editable=False)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.rating = Beer.objects.aggregate(average_rating=Avg('review__rating'))
+        super(Beer, self).save(*args, **kwargs)
 
 
 class Review(models.Model):
