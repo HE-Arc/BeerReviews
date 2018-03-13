@@ -36,10 +36,13 @@
                     <div class="ui inverted">
                         <p class="ui">Welcome, {{ user.username }}</p>
                         <a class="ui inverted button" href="{% url 'users:logout' %}">Logout</a>
+                        <a class="ui inverted button" href="{% url 'users:profile' %}">Profile</a>
                     </div>
                     {% else %}
-                    <a class="ui inverted button" href="{% url 'users:login' %}">Log in</a>
-                    <a class="ui inverted button"  href="{% url 'users:signup' %}">Sign Up</a>
+                    <div class="ui inverted">
+                        <a class="ui inverted button" href="{% url 'users:login' %}">Log in</a>
+                        <a class="ui inverted button"  href="{% url 'users:signup' %}">Sign Up</a>
+                    </div>
                     {% endif %}
                     <div class="ui search hm">
                         <input class="prompt" placeholder="Search beers..." type="text">
