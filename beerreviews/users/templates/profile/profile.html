@@ -4,8 +4,17 @@
 {% block content %}
 
 <div class="ui container">
+    <h1>Welcome to your profile page </h1>
     <div class="ui">
-        <h1> Presentation </h1>
+        <hr />
+            <h2>Pseudo :</em> {{user.username}}</h2>
+            <h4><em>first name :</em> {{user.first_name}}</h4>
+            <h4><em>last name :</em>  {{user.last_name}}</h4>
+            <h4><em>email :</em> {{user.email}}</h4>
+            <h4><em>Date joined :</em> {{user.date_joined}}</h4>
+        <div class="ui inverted">
+            <p class="ui">Change password </p>
+            <a class="ui button" href="{% url 'users:change_password' %}">Change Password</a>
     </div>
 </div>
 
