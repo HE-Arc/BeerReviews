@@ -11,7 +11,6 @@ server "beerreviews.srvz-webapp.he-arc.ch", user:"poweruser", roles: %w{app db w
 
 set :deploy_to, "/var/www/#{fetch(:application)}"
 
-
 # role-based syntax
 # ==================
 

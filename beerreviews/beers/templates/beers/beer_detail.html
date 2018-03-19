@@ -21,7 +21,8 @@
             <p>{{beer.description}}</p>
         </div>
 
-        <!-- Review form  -->
+        <!-- Rate form  -->
+        {% if user.is_authenticated %}
         <div class="ui reviews container">
             <h3 class="ui dividing header">Rate this beer</h3>
             <div>
@@ -50,6 +51,7 @@
                 {% include 'beerreviews/error.html' %}
             </div>
         </div>
+        {% endif %}
 
         <!--Reviews section-->
         <div class="ui comments container">

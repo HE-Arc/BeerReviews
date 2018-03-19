@@ -2,7 +2,7 @@
 lock "~> 3.10.1"
 
 set :application, "BeerReviews"
-set :repo_url, "git@github.com:He-Arc/BeerReviews.git"
+set :repo_url, "git@github.com:HE-Arc/BeerReviews.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -41,6 +41,7 @@ set :repo_url, "git@github.com:He-Arc/BeerReviews.git"
 after 'deploy:publishing', 'uwsgi:restart'
 
 namespace :uwsgi do
+
 	desc 'Restart application'
 	task :restart do
 		on roles(:web) do |h|
