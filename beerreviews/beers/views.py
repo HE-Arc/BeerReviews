@@ -1,5 +1,6 @@
 from datetime import timezone
 
+from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404
@@ -33,17 +34,20 @@ class TopListView(generic.ListView):
 
 
 ### Reviews
+@login_required
 def create_review(request, beer_id):
     beer = get_object_or_404(Beer, pk=beer_id)
-    # if not request.user.is_authenticated:
-    #     return HttpResponseForbidden()
-    if request.user.is_authenticated:
-        review = Review(rating=request.POST['rating'], content=request.POST['comment'], beer=beer, user=request.user)
+
+    if request.POST['comment'] != "":
+        review, is_created = Review.objects.update_or_create(rating=request.POST['rating'], content=request.POST['comment'], user=request.user, beer=beer)
+        # review = Review(rating=request.POST['rating'], content=request.POST['comment'], beer=beer, user=request.user)
+        # review.content = request.POST['comment']
+        # review.rating = request.POST['rating']
         review.save()
         beer.save()
     else:
         return render(request, 'beers/beer_detail.html', {
             'beer': beer,
-            'error_message': "You need to be logged in to rate a beer",
+            'error_message': "Your review is empty",
         })
     return HttpResponseRedirect(reverse('beers:detail', args=(beer.id,)))
