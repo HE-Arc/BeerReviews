@@ -15,9 +15,9 @@
 <body>
 <!-- sidebar -->
 <div class="ui vertical inverted sidebar menu">
-    <a class="active item">Home</a>
-	<a class="item">Our beers</a>
-    <a class="item">Top 50</a>
+    <a class="{% if request.resolver_match.url_name == "index" %}active{% endif %} item"  href="{% url 'index' %}">Home</a>
+	<a class="{% if request.resolver_match.url_name == "beers" %}active{% endif %} item" href="{% url 'beers:beers' %}">Our beers</a>
+    <a class="{% if request.resolver_match.url_name == "top" %}active{% endif %} item" href="{% url 'beers:top' %}">Top 10</a>
 </div>
 <!-- pushable -->
 <div class="pusher">
@@ -27,9 +27,9 @@
                 <a class="toc item">
                     <i class="sidebar icon"></i>
                 </a>
-                <a class="active item" href="{% url 'index' %}">Home</a>
-				<a class="item" href="{% url 'beers:beers' %}">Our beers</a>
-                <a class="item" href="{% url 'beers:top' %}">Top 50</a>
+                <a class="{% if request.resolver_match.url_name == "index" %}active{% endif %} item" href="{% url 'index' %}">Home</a>
+				<a class="{% if request.resolver_match.url_name == "beers" %}active{% endif %} item" href="{% url 'beers:beers' %}">Our beers</a>
+                <a class="{% if request.resolver_match.url_name == "top" %}active{% endif %} item" href="{% url 'beers:top' %}">Top 10</a>
 
                 <div class="right bottom item tobepadded">
                     {% if user.is_authenticated %}
