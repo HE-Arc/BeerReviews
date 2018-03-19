@@ -41,28 +41,29 @@ set :repo_url, "git@github.com:HE-Arc/BeerReviews.git"
 after 'deploy:publishing', 'uwsgi:restart'
 
 namespace :uwsgi do
-    desc 'Restart application'
-    task :restart do
-        on roles(:web) do |h|
-            execute :sudo, 'sv reload uwsgi'
-        end
-    end
+
+	desc 'Restart application'
+	task :restart do
+		on roles(:web) do |h|
+			execute :sudo, 'sv reload uwsgi'
+		end
+	end
 end
 
 after 'deploy:updating', 'python:create_venv'
 
 namespace :python do
+	
+	def venv_path
+		File.join(shared_path, 'env')
+	end
 
-    def venv_path
-        File.join(shared_path, 'env’)
-    end
-
-    desc 'Create venv’
-    task :create_venv do
-        on roles([:app, :web]) do |h|
-	    execute "python3.6 -m venv #{venv_path}"
-            execute "source #{venv_path}/bin/activate"
-	    execute "#{venv_path}/bin/pip install –r #{release_path}/requirements.txt"
-        end
-    end
+	desc 'Create venv'
+	task :create_venv do
+		on roles([:app, :web]) do |h|
+			execute "python3.6 -m venv www/BeerReviews/shared/env"
+			execute "source www/BeerReviews/shared/env/bin/activate"
+			execute "www/BeerReviews/shared/env/bin/pip install -r www/BeerReviews/current/requirements.txt"
+		end
+	end
 end

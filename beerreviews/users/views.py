@@ -1,8 +1,9 @@
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
+from django.urls import reverse
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 import beerreviews
 
@@ -30,6 +31,8 @@ def signout(request):
     return redirect('/')
 
 
+# REPRENDRE D'ICI
+# https://simpleisbetterthancomplex.com/tutorial/2016/09/19/how-to-create-password-reset-view.html
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -49,4 +52,7 @@ def change_password(request):
 
 @login_required
 def profile(request):
-    return render(request, 'profile/profile.html', {'user': request.user})
+    if request.user.is_superuser:
+        return HttpResponseRedirect(reverse('admin:index'))
+    else:
+        return render(request, 'profile/profile.html', {'user': request.user})
