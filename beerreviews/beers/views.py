@@ -33,18 +33,29 @@ class TopListView(generic.ListView):
         return Beer.objects.order_by('-rating')
 
 
-# Reviews
 @login_required
 def create_review(request, beer_id):
+    """Method that create a review"""
     beer = get_object_or_404(Beer, pk=beer_id)
 
     if request.POST['comment'] != "":
-        review, is_created = Review.objects.update_or_create(rating=request.POST['rating'], content=request.POST['comment'], user=request.user, beer=beer)
-        # review = Review(rating=request.POST['rating'], content=request.POST['comment'], beer=beer, user=request.user)
-        # review.content = request.POST['comment']
-        # review.rating = request.POST['rating']
+        review, is_created = Review.objects.update_or_create(beer=beer, user=request.user)
+        review.rating = request.POST['rating']
+        review.content = request.POST['comment']
         review.save()
-        beer.save()
+        beer.save()  # Needed to update the rating field of the beer
+
+        # User success message
+        success_message = ""
+        if is_created:
+            success_message = "You successfully created a new review"
+        else:
+            success_message = "You successfully updated your last review"
+
+        # return render(request, 'beers/beer_detail.html', {
+        #     'beer': beer,
+        #     'success_message': success_message,
+        # })
     else:
         return render(request, 'beers/beer_detail.html', {
             'beer': beer,

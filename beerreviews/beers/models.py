@@ -54,8 +54,8 @@ class Beer(models.Model):
 
 
 class Review(models.Model):
-    rating = models.IntegerField()
-    content = models.TextField()
+    rating = models.IntegerField(null=True)
+    content = models.TextField(null=True)
     date = models.DateField(default=timezone.now, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     beer = models.ForeignKey(Beer, on_delete=models.CASCADE)
