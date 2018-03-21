@@ -10,7 +10,7 @@ from django.views import generic
 from .models import Beer, Review
 
 
-### Our beers
+# Our beers
 class BeerListView(generic.ListView):
     model = Beer
 
@@ -18,12 +18,12 @@ class BeerListView(generic.ListView):
         return Beer.objects.all()
 
 
-### Detail of a beer
+# Detail of a beer
 class BeerDetailView(generic.DetailView):
     model = Beer
 
 
-### Top 10
+# Top 10
 class TopListView(generic.ListView):
     template_name = 'beers/beer_top.html'
     context_object_name = 'top_beers_list'
@@ -33,7 +33,7 @@ class TopListView(generic.ListView):
         return Beer.objects.order_by('-rating')
 
 
-### Reviews
+# Reviews
 @login_required
 def create_review(request, beer_id):
     beer = get_object_or_404(Beer, pk=beer_id)

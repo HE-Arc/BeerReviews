@@ -59,3 +59,7 @@ class Review(models.Model):
     date = models.DateField(default=timezone.now, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     beer = models.ForeignKey(Beer, on_delete=models.CASCADE)
+
+    def get_all_object(self):
+        queryset = self._meta.model.objects.all()
+        return queryset
