@@ -6,14 +6,37 @@
 
         <!--Beer informations-->
         <div class="beer">
-            <img src="{{beer.country.flag}}">
-            <img class="beer-image ui medium left floated circular image" src="{{beer.imgsrc}}" }>
-            <h2>{{beer.name}}</h2>
-            <h3>{{beer.maker.name}}</h3>
-            <h5><em>Style :</em> {{beer.style.name}}</h5>
-            <h5><em>ABV :</em> {{beer.abv}} %</h5>
-            <h5><em>EBC :</em> {{beer.ebc}}</h5>
-            <h5><em>IBU :</em> {{beer.ibu}}</h5>
+            <div class="ui grid">
+                <div class="ui four wide column">
+                    <img class="beer-image ui medium left floated circular image" src="{{beer.imgsrc}}" }>
+                </div>
+                <div class="ui four wide column">
+                    <img src="{{beer.country.flag}}">
+                    <h2>{{beer.name}}</h2>
+                    <h3>{{beer.maker.name}}</h3>
+                    <h3>Users rating : {{beer.rating}}/5</h3>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div class="ui four wide column">
+
+                </div>
+                <div class="ui two wide column">
+                    <h5><em>Style :</em> {{beer.style.name}}</h5>
+                </div>
+                <div class="ui two wide column">
+                    <h5><em>ABV :</em> {{beer.abv}} %</h5>
+                </div>
+                <div class="ui two wide column">
+                    <h5><em>IBU :</em> {{beer.ibu}}</h5>
+                </div>
+                <div class="ui two wide column">
+                    <h5><em>EBC :</em> {{beer.ebc}}</h5>
+                </div>
+                <div class="ui four wide column">
+
+                </div>
+            </div>
         </div>
 
         <div class="ui beer container">
@@ -28,11 +51,12 @@
             <div>
                 <form class="ui reply form" method="post" action="{% url 'beers:create_review' beer.id %}">
                     {% csrf_token %}
-                    <div class="inline fields">
+                    <div class="fields">
                         <div class="twelve wide field">
                             <label>Comment</label>
                             <textarea name="comment" maxlength="512"></textarea>
                         </div>
+
                         <div class="four wide field">
                             <label>Rating</label>
                             <select class="ui dropdown" name="rating">
@@ -45,8 +69,10 @@
                         </div>
                     </div>
 
-                    <button class="ui blue labeled submit icon button" type="submit"><i class="icon edit"></i> Rate
+                    <button class="ui blue labeled submit icon button" type="submit"><i class="icon edit"></i>
+                        Rate
                     </button>
+
                 </form>
                 {% include 'beerreviews/messages.html' %}
             </div>

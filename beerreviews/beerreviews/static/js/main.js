@@ -10,7 +10,11 @@ $(document).ready(function () {
     show_stars();
 
     // Close message popup
-    $('.close.icon').on('click', function() { $(this).parent().transition('fade'); });
+    $('.close.icon').on('click', function () {
+        $(this).parent().transition('fade');
+    });
+
+    $('select.dropdown').dropdown();
 });
 
 // Transforms the numerical value of divs to stars on a single beer page
