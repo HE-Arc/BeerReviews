@@ -1,5 +1,6 @@
 from datetime import timezone
 
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpResponseForbidden
@@ -46,19 +47,11 @@ def create_review(request, beer_id):
         beer.save()  # Needed to update the rating field of the beer
 
         # User success message
-        success_message = ""
         if is_created:
-            success_message = "You successfully created a new review"
+            messages.success(request, "You successfully created a new review")
         else:
-            success_message = "You successfully updated your last review"
-
-        # return render(request, 'beers/beer_detail.html', {
-        #     'beer': beer,
-        #     'success_message': success_message,
-        # })
+            messages.success(request, "You successfully updated your last review")
     else:
-        return render(request, 'beers/beer_detail.html', {
-            'beer': beer,
-            'error_message': "Your review is empty",
-        })
+        messages.error(request, "Your comment is empty")
+
     return HttpResponseRedirect(reverse('beers:detail', args=(beer.id,)))

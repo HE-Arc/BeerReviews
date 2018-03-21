@@ -1,0 +1,49 @@
+{% if messages %}
+
+{% for message in messages %}
+
+{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+
+<div class="ui error message">
+    <i class="close icon"></i>
+    <div class="header">
+        There were some errors with your submission.
+    </div>
+    <ul class="list">
+        <li>{{ message }}</li>
+    </ul>
+</div>
+
+{% endif %}
+
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<div class="ui success message">
+    <i class="close icon"></i>
+    <div class="header">
+        Thanks for the review !
+    </div>
+    <ul class="list">
+        <li>{{ message }}</li>
+    </ul>
+</div>
+
+{% endif %}
+
+{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+
+<div class="ui info message">
+    <i class="close icon"></i>
+    <div class="header">
+        Info
+    </div>
+    <ul class="list">
+        <li>{{ message }}</li>
+    </ul>
+</div>
+
+{% endif %}
+
+{% endfor %}
+
+{% endif %}
