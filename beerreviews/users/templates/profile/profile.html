@@ -7,6 +7,16 @@
     <h1>Welcome to your profile page </h1>
     <div class="ui">
         <hr />
+
+        <!-- ICI, version Django, on récupère et affiche le message. Mais pas dans une PopUp -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
             <h2>Pseudo :</em> {{user.username}}</h2>
             <h4><em>first name :</em> {{user.first_name}}</h4>
             <h4><em>last name :</em>  {{user.last_name}}</h4>
