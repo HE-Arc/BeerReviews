@@ -3,7 +3,7 @@
 {% block title %}Top 10{% endblock %}
 {% block content %}
 
-<h1 class="ui dividing header">
+<h1 class="ui header">
     Best 10 beers
 </h1>
 
@@ -12,7 +12,7 @@
 {% for beer in top_beers_list %}
 {% if beer.rating %}
 
-<h2 class="ui header">
+<h2 class="ui horizontal divider header">
     {{ forloop.counter }}
 </h2>
 
