@@ -18,6 +18,7 @@
     <a class="{% if request.resolver_match.url_name == "index" %}active{% endif %} item"  href="{% url 'index' %}">Home</a>
 	<a class="{% if request.resolver_match.url_name == "beers" %}active{% endif %} item" href="{% url 'beers:beers' %}">Our beers</a>
     <a class="{% if request.resolver_match.url_name == "top" %}active{% endif %} item" href="{% url 'beers:top' %}">Top 10</a>
+    <a class="item" href="{% url 'beers:random' %}">Random beer</a>
 </div>
 <!-- pushable -->
 <div class="pusher">
@@ -30,6 +31,7 @@
                 <a class="{% if request.resolver_match.url_name == "index" %}active{% endif %} item" href="{% url 'index' %}">Home</a>
 				<a class="{% if request.resolver_match.url_name == "beers" %}active{% endif %} item" href="{% url 'beers:beers' %}">Our beers</a>
                 <a class="{% if request.resolver_match.url_name == "top" %}active{% endif %} item" href="{% url 'beers:top' %}">Top 10</a>
+                <a class="item" href="{% url 'beers:random' %}">Random beer</a>
 
                 <div class="right bottom item tobepadded">
                     {% if user.is_authenticated %}

@@ -1,6 +1,8 @@
+from random import randint
+
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models import Avg
+from django.db.models import Avg, Count
 from django.utils import timezone
 from django_countries.fields import CountryField
 
@@ -51,6 +53,12 @@ class Beer(models.Model):
     def save(self, *args, **kwargs):
         self.rating = Beer.objects.filter(pk=self.pk).aggregate(average_rating=Avg('review__rating'))['average_rating']
         super(Beer, self).save(*args, **kwargs)
+
+    @classmethod
+    def get_random(cls):
+        total = Beer.objects.aggregate(count=Count('id'))['count']
+        random = randint(0, total - 1)
+        return Beer.objects.all()[random]
 
 
 class Review(models.Model):
