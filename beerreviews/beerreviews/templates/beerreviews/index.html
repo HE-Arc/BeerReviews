@@ -3,40 +3,51 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-<h1 class="ui dividing header">
-    Latest beers
-</h1>
 
-{% if latest_beers_list %}
-
-<div class="ui three stackable cards">
-
-    {% for beer in latest_beers_list %}
-
-    <div class="card">
-        <a class="image" href="{% url 'beers:detail' beer.id %}">
-            <img src="{{beer.imgsrc}}">
-        </a>
-        <div class="content">
-            <div class="header">{{beer.name}}</div>
-            <div class="meta">
-                <a>{{beer.style.name}}</a>
-            </div>
-            <div class="description">
-                {{beer.description}}
-            </div>
-        </div>
-        <div class="extra content">
-            <span class="right floated"> {{beer.created_at}} </span>
-        </div>
-    </div>
-
-    {% endfor %}
-
+<div class="ui inverted vertical masthead center aligned segment">
+    <h1 class="ui header">
+        BeerReviews
+    </h1>
+    <h2>The website that let you make beer reviews, and see the best beers from around the world ! </h2>
 </div>
 
-{% else %}
-<p>No beers are available.</p>
-{% endif %}
+<div class="ui container">
+    <h1 class="ui dividing header">
+        Latest beers
+    </h1>
+
+    {% if latest_beers_list %}
+
+    <div class="ui three stackable cards">
+
+        {% for beer in latest_beers_list %}
+
+        <div class="card">
+            <a class="image" href="{% url 'beers:detail' beer.id %}">
+                <img src="{{beer.imgsrc}}">
+            </a>
+            <div class="content">
+                <div class="header">{{beer.name}}</div>
+                <div class="meta">
+                    <a>{{beer.style.name}}</a>
+                </div>
+                <div class="description">
+                    {{beer.description}}
+                </div>
+            </div>
+            <div class="extra content">
+                <span class="right floated"> {{beer.created_at}} </span>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+    <p>No beers are available.</p>
+    {% endif %}
+
+</div>
 
 {% endblock %}

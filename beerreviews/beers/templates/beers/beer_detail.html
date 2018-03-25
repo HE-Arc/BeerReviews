@@ -52,13 +52,13 @@
                 {% csrf_token %}
                 <div class="fields">
                     <div class="twelve wide field">
-                        <label>Comment</label>
-                        <textarea name="comment" maxlength="512"></textarea>
+                        <label for="comment">Comment</label>
+                        <textarea id="comment" name="comment" maxlength="512"></textarea>
                     </div>
 
                     <div class="four wide field">
-                        <label>Rating</label>
-                        <select class="ui dropdown" name="rating">
+                        <label for="rating">Rating</label>
+                        <select class="ui dropdown" id="rating" name="rating">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

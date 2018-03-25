@@ -3,44 +3,48 @@
 {% block title %}Top 10{% endblock %}
 {% block content %}
 
-<h1 class="ui header">
-    Best 10 beers
-</h1>
+<div class="ui container">
 
-{% if top_beers_list %}
+    <h1 class="ui header">
+        Best 10 beers
+    </h1>
 
-{% for beer in top_beers_list %}
-{% if beer.rating %}
+    {% if top_beers_list %}
 
-<h2 class="ui horizontal divider header">
-    {{ forloop.counter }}
-</h2>
+    {% for beer in top_beers_list %}
+    {% if beer.rating %}
 
-<div class="ui centered card">
-    <a class="image" href="{% url 'beers:detail' beer.id %}">
-        <img src="{{beer.imgsrc}}">
-    </a>
-    <div class="content">
-        <div class="header">{{beer.name}}</div>
-        <div class="meta">
-            <a>{{beer.style.name}}</a>
+    <h2 class="ui horizontal divider header">
+        {{ forloop.counter }}
+    </h2>
+
+    <div class="ui centered card">
+        <a class="image" href="{% url 'beers:detail' beer.id %}">
+            <img src="{{beer.imgsrc}}">
+        </a>
+        <div class="content">
+            <div class="header">{{beer.name}}</div>
+            <div class="meta">
+                <a>{{beer.style.name}}</a>
+            </div>
+            <div class="description">
+                {{beer.description}}
+            </div>
         </div>
-        <div class="description">
-            {{beer.description}}
+        <div class="extra content">
+            <span class="right floated"> {{beer.rating}}/5 </span>
         </div>
     </div>
-    <div class="extra content">
-        <span class="right floated"> {{beer.rating}}/5 </span>
-    </div>
+
+    {% endif %}
+    {% endfor %}
+
+
+    {% else %}
+
+    <p>No beers are available.</p>
+
+    {% endif %}
+
 </div>
-
-{% endif %}
-{% endfor %}
-
-
-{% else %}
-
-<p>No beers are available.</p>
-
-{% endif %}
 {% endblock %}
