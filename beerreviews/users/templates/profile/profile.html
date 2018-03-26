@@ -4,11 +4,11 @@
 {% block content %}
 
 <div class="ui container">
-    <h1>Welcome to your profile page </h1>
+    <h1 class="ui header">Welcome to your profile page {{user.username}} </h1>
     <div class="ui">
         <hr />
 
-        <!-- ICI, version Django, on récupère et affiche le message. Mais pas dans une PopUp -->
+        <!-- ICI, version Django, on récupère et affiche le message. Mais pas dans une PopUp
         {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -16,33 +16,34 @@
             {% endfor %}
         </ul>
         {% endif %}
-
-            <h3 class="ui header">Pseudo :</em> {{user.username}}</h3>
-            <h4><em>first name :</em> {{user.first_name}}</h4>
-            <h4><em>last name :</em>  {{user.last_name}}</h4>
-            <h4><em>email :</em> {{user.email}}</h4>
-            <h4><em>last login :</em> {{user.last_login}}</h4>
-            <h4><em>Date joined :</em> {{user.date_joined}}</h4>
+        -->
+        <h4><em>first name :</em> {{user.first_name}}</h4>
+        <h4><em>last name :</em>  {{user.last_name}}</h4>
+        <h4><em>email :</em> {{user.email}}</h4>
+        <h4><em>last login :</em> {{user.last_login}}</h4>
+        <h4><em>Date joined :</em> {{user.date_joined}}</h4>
         <div class="ui inverted">
-            <p class="ui">Change password </p>
             <a class="ui button" href="{% url 'users:change_password' %}">Change Password</a>
         </div>
     </div>
 </div>
-
 <div class="ui container">
-    <h3 class="ui header">Content list</h3>
+    <h2 class="ui">Content list</h2>
     <hr />
     {% for b in beer %}
         {% for r in review %}
             {% if r.beer_id is b.id %}
-                <h2><em>Beer :</em> {{b.name}} </h2>
-                <h5><em>Content :</em> {{r.content}} </h5>
-                <div class="stars-container">{{r.rating}}</div>
-                <h5><em>Date: </em> {{r.date}} </h5>
+                <div style="border: 2px solid #1c75c8; padding: 3px; background-color: #e6e6e6; margin: 5px;" >
+                    <h3><em>Beer :</em> <a href="/beers/{{ b.id }}/" >{{b.name}} </a> </h3>
+                    <h4><em>Content :</em> {{r.content}} </h4>
+                    <div class="stars-container">{{r.rating}}</div>
+                    <h5><em>Date: </em> {{r.date}} </h5>
+                </div>
             {% endif %}
         {% endfor %}
     {% endfor %}
 </div>
+
+
 
 {% endblock %}

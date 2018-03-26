@@ -29,7 +29,6 @@ def random(request):
     beer = Beer.get_random()
     return HttpResponseRedirect(reverse('beers:detail', args=(beer.id,)))
 
-
 # Top 10
 class TopListView(generic.ListView):
     template_name = 'beers/beer_top.html'
@@ -38,6 +37,7 @@ class TopListView(generic.ListView):
 
     def get_queryset(self):
         return Beer.objects.order_by('-rating')
+
 
 
 @login_required
