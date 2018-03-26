@@ -17,7 +17,7 @@
         </ul>
         {% endif %}
 
-            <h3 class="ui dividing header">Pseudo :</em> {{user.username}}</h3>
+            <h3 class="ui header">Pseudo :</em> {{user.username}}</h3>
             <h4><em>first name :</em> {{user.first_name}}</h4>
             <h4><em>last name :</em>  {{user.last_name}}</h4>
             <h4><em>email :</em> {{user.email}}</h4>
@@ -31,7 +31,8 @@
 </div>
 
 <div class="ui container">
-    <h3 class="ui dividing header">Content list</h3>
+    <h3 class="ui header">Content list</h3>
+    <hr />
     {% for b in beer %}
         {% for r in review %}
             {% if r.beer_id is b.id %}
