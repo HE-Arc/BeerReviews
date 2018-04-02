@@ -10,7 +10,7 @@
       "abv": 9,
       "ibu": 19,
       "country": "CA",
-      "imgsrc": "https://www.lebonsiropderable.com/wp-content/uploads/2015/07/biere-quebec_La-Fin-du-Monde-Unibroue_le-bon-sirop-d-erable.jpg", 
+      "imgsrc": "images/beers/fin_du_monde.jpg",
 	  "created_at" : "1991-03-11"
     }
   },
@@ -25,7 +25,7 @@
       "abv": 9,
       "ibu": 16,
       "country": "CA",
-      "imgsrc": "https://www.unibroue-france.fr/wp-content/uploads/2017/10/Bi%C3%A8re-3-pistoles.jpg", 
+      "imgsrc": "images/beers/trois_pistoles.png",
 	  "created_at" : "1995-01-06"
     }
   },
@@ -40,7 +40,7 @@
       "abv": 4.2,
       "ibu": 45,
       "country": "IE",
-      "imgsrc": "https://www.guinness.com/media/1585/pdp_1440x900__0001_guinness_draught_spritz2_bottle.png?anchor=center&mode=crop&quality=75&width=1440", 
+      "imgsrc": "images/beers/guinness_draught.jpg",
 	  "created_at" : "2009-02-05"
     }
   }
