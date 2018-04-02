@@ -20,7 +20,7 @@
 
     <div class="ui centered card">
         <a class="image" href="{% url 'beers:detail' beer.id %}">
-            <img src="{{beer.imgsrc}}">
+            <img src="{{ beer.imgsrc.url }}">
         </a>
         <div class="content">
             <div class="header">{{beer.name}}</div>
