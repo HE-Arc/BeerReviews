@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django_countries',
     'beers',
     'users',
-    'beerreviews'
+    'beerreviews',
 ]
 
 MIDDLEWARE = [
