@@ -9,7 +9,7 @@
       "maker": 1,
       "abv": 9,
       "ibu": 19,
-      "country": "CA",
+      "country": "CAN",
       "imgsrc": "images/beers/fin_du_monde.jpg",
 	  "created_at" : "1991-03-11"
     }
@@ -24,7 +24,7 @@
       "maker": 1,
       "abv": 9,
       "ibu": 16,
-      "country": "CA",
+      "country": "CAN",
       "imgsrc": "images/beers/trois_pistoles.png",
 	  "created_at" : "1995-01-06"
     }
@@ -39,9 +39,129 @@
       "maker": 2,
       "abv": 4.2,
       "ibu": 45,
-      "country": "IE",
+      "country": "IRL",
       "imgsrc": "images/beers/guinness_draught.jpg",
 	  "created_at" : "2009-02-05"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 4,
+    "fields": {
+      "name": "1664",
+      "description": "Pils, low fermentation",
+      "style": 4,
+      "maker": 3,
+      "abv": 5.5,
+      "ibu": 22,
+      "country": "FRA",
+      "imgsrc": "images/beers/1664.jpg",
+	  "created_at" : "1952-01-01"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 5,
+    "fields": {
+      "name": "Corona",
+      "description": "Light, generous in the mouth and sweet on the finish",
+      "style": 4,
+      "maker": 4,
+      "abv": 4.5,
+      "ibu": 19,
+      "country": "MEX",
+      "imgsrc": "images/beers/corona.jpg",
+	  "created_at" : "1925-01-01"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 6,
+    "fields": {
+      "name": "Brooklyn Lager",
+      "description": "Light caramel flavor with bitterness on the finish",
+      "style": 4,
+      "maker": 5,
+      "abv": 5.2,
+      "ibu": 33,
+      "country": "USA",
+      "imgsrc": "images/beers/brooklyn_lager.jpg",
+	  "created_at" : "1952-01-01"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 7,
+    "fields": {
+      "name": "Kilkenny",
+      "description": "Strong malt flavor and generous in the mouth. This beer is, with Guinness, certainly most famous Irish beer.",
+      "style": 5,
+      "maker": 2,
+      "abv": 4.3,
+      "ibu": 29,
+      "country": "IRL",
+      "imgsrc": "images/beers/kilkenny.jpg",
+	  "created_at" : "1710-01-01"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 8,
+    "fields": {
+      "name": "Prix Garantie Beer",
+      "description": "Certainly the most famous beer in Switzerland. Inexpensive and very pleasant to taste",
+      "style": 6,
+      "maker": 6,
+      "abv": 4.8,
+      "ibu": 26,
+      "country": "IRL",
+      "imgsrc": "images/beers/prix_garantie.jpg",
+	  "created_at" : "2010-01-01"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 9,
+    "fields": {
+      "name": "Blonde Grimbergen",
+      "description": "All Grimbergen beers come from Grimbergen Abbey. A refined and fruity beer with a hint of strong spices.",
+      "style": 7,
+      "maker": 6,
+      "abv": 6.7,
+      "ibu": 22,
+      "country": "BEL",
+      "imgsrc": "images/beers/grimbergen_blonde.jpg",
+	  "created_at" : "1993-01-01"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 10,
+    "fields": {
+      "name": "White Grimbergen",
+      "description": "All Grimbergen beers come from Grimbergen Abbey. Refreshing and fruity with citrus aromas",
+      "style": 7,
+      "maker": 6,
+      "abv": 6,
+      "ibu": 12.5,
+      "country": "BEL",
+      "imgsrc": "images/beers/grimbergen_blanche.jpg",
+	  "created_at" : "2007-01-01"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 11,
+    "fields": {
+      "name": "Red Grimbergen",
+      "description": "All Grimbergen beers come from Grimbergen Abbey. Red Grimbergen combines the complex aromas of red fruits like strawberry with clove shades and a slightly spicy note.",
+      "style": 7,
+      "maker": 6,
+      "abv": 6,
+      "ibu": 13,
+      "country": "BEL",
+      "imgsrc": "images/beers/grimbergen_rouge.jpg",
+	  "created_at" : "2010-01-01"
     }
   }
 ]

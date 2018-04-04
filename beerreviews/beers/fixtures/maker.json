@@ -12,5 +12,40 @@
     "fields": {
       "name": "Guinness"
     }
+  },
+  {
+    "model": "beers.maker",
+    "pk": 3,
+    "fields": {
+      "name": "Kronenbourg"
+    }
+  },
+  {
+    "model": "beers.maker",
+    "pk": 4,
+    "fields": {
+      "name": "Grupo Modelo"
+    }
+  },
+  {
+    "model": "beers.maker",
+    "pk": 5,
+    "fields": {
+      "name": "Brooklyn Brewery"
+    }
+  },
+  {
+    "model": "beers.maker",
+    "pk": 6,
+    "fields": {
+      "name": "Prix Garantie"
+    }
+  },
+  {
+    "model": "beers.maker",
+    "pk": 6,
+    "fields": {
+      "name": "Grimbergen"
+    }
   }
 ]

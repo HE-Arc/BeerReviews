@@ -9,4 +9,5 @@ urlpatterns = [
     path('<int:beer_id>/review/create/', views.create_review, name="create_review"),
     path('random/', views.random, name="random"),
     path('top/', views.TopListView.as_view(), name="top"),
+    path('search/', views.search, name="search"),
 ]

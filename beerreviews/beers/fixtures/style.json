@@ -19,6 +19,34 @@
     "fields": {
       "name": "Stout"
     }
+  },
+  {
+    "model": "beers.style",
+    "pk": 4,
+    "fields": {
+      "name": "Pale lager"
+    }
+  },
+  {
+    "model": "beers.style",
+    "pk": 5,
+    "fields": {
+      "name": "Red Ale"
+    }
+  },
+  {
+    "model": "beers.style",
+    "pk": 6,
+    "fields": {
+      "name": "Blonde Ale"
+    }
+  },
+  {
+    "model": "beers.style",
+    "pk": 7,
+    "fields": {
+      "name": "Belge Ale"
+    }
   }
 
 ]

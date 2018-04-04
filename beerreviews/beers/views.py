@@ -61,3 +61,7 @@ def create_review(request, beer_id):
         messages.error(request, "Your comment is empty")
 
     return HttpResponseRedirect(reverse('beers:detail', args=(beer.id,)))
+
+
+def search(request):
+    return HttpResponseRedirect(reverse('Hello'))

@@ -48,7 +48,7 @@
                     {% endif %}
                     <form type="get" action=".">
                         <div class="ui search hm">
-                            <input class="prompt" placeholder="Search beers..." type="text">
+                            <input class="prompt" action="{% url 'beers:search' %}" placeholder="Search beers..." type="text">
                             <button class="ui button" type="submit">Submit</button>
                             <div class="results"></div>
                         </div>
