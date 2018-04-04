@@ -2,26 +2,33 @@
     padding: 1em 0em;
 }
 
+.testing {
+	border: 0.3em solid #1c75c8;
+	padding: 0.3em;
+	background-color: #e6e6e6;
+	margin: 0.2em;"
+}
+
 .masthead.segment {
       min-height: 700px;
       padding: 1em 0em;
     }
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-    .masthead h1.ui.header {
-      margin-top: 3em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: normal;
-    }
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
+.masthead .logo.item img {
+  margin-right: 1em;
+}
+.masthead .ui.menu .ui.button {
+  margin-left: 0.5em;
+}
+.masthead h1.ui.header {
+  margin-top: 3em;
+  margin-bottom: 0em;
+  font-size: 4em;
+  font-weight: normal;
+}
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
 
 .tobepadded.a {
     padding: 0.5em;

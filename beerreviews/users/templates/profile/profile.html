@@ -1,4 +1,4 @@
-{% extends 'beerreviews\base.html' %}
+{% extends 'beerreviews/base.html' %}
 {% block title %} Profile {% endblock %}
 <!-- https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html -->
 {% block content %}
@@ -33,7 +33,10 @@
     {% for b in beer %}
         {% for r in review %}
             {% if r.beer_id is b.id %}
-                <div style="border: 2px solid #1c75c8; padding: 3px; background-color: #e6e6e6; margin: 5px;" >
+                <div style="border: 0.2em solid #1c75c8;
+	padding: 0.3em;
+	background-color: #e6e6e6;
+	margin: 0.5em;">
                     <h3><em>Beer :</em> <a href="/beers/{{ b.id }}/" >{{b.name}} </a> </h3>
                     <h4><em>Content :</em> {{r.content}} </h4>
                     <div class="stars-container">{{r.rating}}</div>
