@@ -30,7 +30,7 @@ DEBUG = True
 
 INTERNAL_IPS = '127.0.0.1'
 
-ALLOWED_HOSTS = ['127.0.0.1','beerreviews.srvz-webapp.he-arc.ch']
+ALLOWED_HOSTS = ['127.0.0.1','beerreviews.srvz-webapp.he-arc.ch',]
 
 LOGIN_REDIRECT_URL = 'index'
 
