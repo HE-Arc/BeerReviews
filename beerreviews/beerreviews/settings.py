@@ -97,8 +97,8 @@ WSGI_APPLICATION = 'beerreviews.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('GROUPENAME', os.getenv('DB_NAME')),
-        'USER': os.environ.get('GROUPENAME', os.getenv('DB_USER')),
+        'NAME': os.environ.get('GROUPNAME', os.getenv('DB_NAME')),
+        'USER': os.environ.get('GROUPNAME', os.getenv('DB_USER')),
         'PASSWORD': os.environ.get('PASSWORD', os.getenv('DB_PASSWORD')),
         'HOST': os.environ.get('MYSQL_HOST', os.getenv('DB_HOST')),
         'PORT': os.environ.get('MYSQL_PORT', os.getenv('DB_PORT')),
