@@ -24,7 +24,7 @@ def signup(request):
             return redirect('index')
     else:
         form = SignUpForm()
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'users/signup.html', {'form': form})
 
 
 def signout(request):
@@ -41,12 +41,12 @@ def change_password(request):
             # messages.info(request, 'Your password was successfully updated!')
             # ICI, version django, on ajoute un message !
             messages.add_message(request, messages.INFO, 'Your password was successfully updated!')
-            return render(request, 'profile/profile.html', {'user': request.user})
+            return render(request, 'users/profile.html', {'user': request.user})
         else:
             messages.error(request, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'profile/change_password.html', {
+    return render(request, 'users/change_password.html', {
         'form': form
     })
 
@@ -58,4 +58,4 @@ def profile(request):
     if request.user.is_superuser:
         return HttpResponseRedirect(reverse('admin:index'))
     else:
-        return render(request, 'profile/profile.html', {'user': request.user, 'review': review, 'beer': beer})
+        return render(request, 'users/profile.html', {'user': request.user, 'review': review, 'beer': beer})
