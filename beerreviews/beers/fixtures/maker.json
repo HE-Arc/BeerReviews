@@ -38,14 +38,14 @@
     "model": "beers.maker",
     "pk": 6,
     "fields": {
-      "name": "Prix Garantie"
+      "name": "Grimbergen"
     }
   },
-  {
+    {
     "model": "beers.maker",
-    "pk": 6,
+    "pk": 7,
     "fields": {
-      "name": "Grimbergen"
+      "name": "Prix Garantie"
     }
   }
 ]
