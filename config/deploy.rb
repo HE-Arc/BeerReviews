@@ -64,7 +64,6 @@ namespace :python do
 		    execute "python3.6 -m venv #{venv_path}"
             execute "source #{venv_path}/bin/activate"
             execute :sudo, "pip install -r #{release_path}/requirements.txt"
-            execute "python3.6 #{release_path}/beerreviews/manage.py migrate"
 		end
 	end
 end
