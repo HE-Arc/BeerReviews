@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 from dotenv import load_dotenv, find_dotenv
+import django
+
+django.setup()
 
 load_dotenv(find_dotenv())
 
@@ -48,9 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
+    'beerreviews',
     'beers',
     'users',
-    'beerreviews',
 ]
 
 MIDDLEWARE = [
