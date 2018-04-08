@@ -7,6 +7,8 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpRespons
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import generic
+from django.db.models import Q
+import operator
 
 from .models import Beer, Review
 
@@ -61,3 +63,11 @@ def create_review(request, beer_id):
         messages.error(request, "Your comment is empty")
 
     return HttpResponseRedirect(reverse('beers:detail', args=(beer.id,)))
+
+
+class SearchResult(generic.ListView):
+    model = Beer
+    def get_queryset(self):
+        searchString = self.request.GET['q']
+        print(searchString)
+        return Beer.objects.all()

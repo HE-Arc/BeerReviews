@@ -46,10 +46,12 @@
                         <a class="ui inverted button"  href="{% url 'users:signup' %}">Sign Up</a>
                     </div>
                     {% endif %}
-                    <div class="ui search hm">
-                        <input class="prompt" placeholder="Search beers..." type="text">
-                        <div class="results"></div>
-                    </div>
+                    <form id="searchform" action="{% url 'beers:search' %}" method="get" accept-charset="utf-8">
+                      <div class="ui search hm">
+                          <input class="prompt" placeholder="Search beers..." type="text" name="q">
+                          <div class="results"></div>
+                      </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -10,5 +10,4 @@ urlpatterns = [
     path('signup/', users_views.signup, name='signup'),
     url(r'^password/$', users_views.change_password, name='change_password'),
     url(r'^profile$', users_views.profile, name='profile'),
-
 ]

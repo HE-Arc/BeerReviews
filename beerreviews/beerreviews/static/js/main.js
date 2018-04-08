@@ -15,6 +15,7 @@ $(document).ready(function () {
     });
 
     $('select.dropdown').dropdown();
+    hideMessages(4000, 400);
 });
 
 // Transforms the numerical value of divs to stars on a single beer page
@@ -23,6 +24,7 @@ function show_stars() {
     if (div != null) {
         div.each(function (index) {
             let r = $(this).text()
+
             $(this).empty();
             for (let i = 0; i < 5; i++) {
                 if (i < r) {
@@ -36,4 +38,6 @@ function show_stars() {
     }
 }
 
-
+function hideMessages(delayTime, fadeTime){
+  $('.message').delay(delayTime).slideUp(fadeTime);
+}
