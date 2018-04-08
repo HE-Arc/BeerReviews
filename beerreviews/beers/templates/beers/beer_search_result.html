@@ -1,0 +1,25 @@
+{% extends 'beerreviews/base.html' %}
+
+{% block title %}Beer list{% endblock %}
+{% block content %}
+
+<div class="ui container">
+
+<h1 class="ui dividing header">
+    Search result
+</h1>
+
+<div class="ui relaxed divided list">
+    {% for beer in result %}
+    <div class="item">
+        <div class="content">
+            <a class="header" href="{% url 'beers:detail' beer.id %}">{{beer.name}}</a>
+            <div class="description">{{beer.maker.name}}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+
+{% endblock %}

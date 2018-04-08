@@ -64,11 +64,14 @@ def create_review(request, beer_id):
 
     return HttpResponseRedirect(reverse('beers:detail', args=(beer.id,)))
 
-class search(generic.ListView):
-    model = Beer
-    def get_queryset(self):
-        searchString = self.request.GET['q']
-        print(searchString)
-        return Beer.objects.all()
+def search(request):
+    if 'q' in request.GET and request.GET['q']:
+        q = request.GET['q']
+        beers = Beer.objects.filter(name__icontains=q)
+        for e in beers:
+            print(e.name)
+        return render(request, 'beers/beer_search_result.html', {'result': beers, 'query': q})
+    else:
+        return HttpResponse('Please submit a search term.')
 #def search(request):
 #    return HttpResponseRedirect(reverse('Hello'))
