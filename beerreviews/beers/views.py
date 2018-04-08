@@ -65,9 +65,14 @@ def create_review(request, beer_id):
     return HttpResponseRedirect(reverse('beers:detail', args=(beer.id,)))
 
 
+<<<<<<< HEAD
 class SearchResult(generic.ListView):
     model = Beer
     def get_queryset(self):
         searchString = self.request.GET['q']
         print(searchString)
         return Beer.objects.all()
+=======
+def search(request):
+    return HttpResponseRedirect(reverse('Hello'))
+>>>>>>> 53f059e387cbc48a81b8a87c65fbb7fa8edd360a

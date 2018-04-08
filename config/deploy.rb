@@ -2,7 +2,7 @@
 lock "~> 3.10.1"
 
 set :application, "BeerReviews"
-set :repo_url, "git@github.com:HE-Arc/BeerReviews.git"
+set :repo_url, "https://github.com/HE-Arc/BeerReviews.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -61,9 +61,11 @@ namespace :python do
 	desc 'Create venv'
 	task :create_venv do
 		on roles([:app, :web]) do |h|
-			execute "python3.6 -m venv www/BeerReviews/shared/env"
-			execute "source www/BeerReviews/shared/env/bin/activate"
-			execute "www/BeerReviews/shared/env/bin/pip install -r www/BeerReviews/current/requirements.txt"
+		    execute "python3.6 -m venv #{venv_path}"
+            execute "source #{venv_path}/bin/activate"
+            execute :sudo, "pip install -r #{release_path}/requirements.txt"
+            execute "yes 'yes'| python3.6 #{release_path}/beerreviews/manage.py collectstatic"
+            execute "python3.6 #{release_path}/beerreviews/manage.py migrate"
 		end
 	end
 end

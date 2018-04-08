@@ -1,0 +1,52 @@
+git {% extends 'beerreviews/base.html' %}
+{% block title %} Profile {% endblock %}
+<!-- https://simpleisbetterthancomplex.com/tutorial/2016/06/27/how-to-use-djangos-built-in-login-system.html -->
+{% block content %}
+
+<div class="ui container">
+    <h1 class="ui header">Welcome to your profile page {{user.username}} </h1>
+    <div class="ui">
+        <hr />
+
+        <!-- ICI, version Django, on récupère et affiche le message. Mais pas dans une PopUp
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        -->
+        <h4><em>first name :</em> {{user.first_name}}</h4>
+        <h4><em>last name :</em>  {{user.last_name}}</h4>
+        <h4><em>email :</em> {{user.email}}</h4>
+        <h4><em>last login :</em> {{user.last_login}}</h4>
+        <h4><em>Date joined :</em> {{user.date_joined}}</h4>
+        <div class="ui inverted">
+            <a class="ui button" href="{% url 'users:change_password' %}">Change Password</a>
+        </div>
+    </div>
+</div>
+<div class="ui container">
+    <h2 class="ui">Content list</h2>
+    <hr />
+    {% for b in beer %}
+        {% for r in review %}
+            {% if r.beer_id is b.id %}
+                <div style="border: 0.2em solid #1c75c8;
+	padding: 0.3em;
+	background-color: #e6e6e6;
+	margin: 0.5em;">
+                    <h3><em>Beer :</em> <a href="/beers/{{ b.id }}/" >{{b.name}} </a> </h3>
+                    <h4><em>Content :</em> {{r.content}} </h4>
+                    <div class="stars-container">{{r.rating}}</div>
+                    <h5><em>Date: </em> {{r.date}} </h5>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

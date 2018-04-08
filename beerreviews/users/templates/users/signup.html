@@ -1,16 +1,18 @@
-{% extends 'beerreviews\base.html' %}
+{% extends 'beerreviews/base.html' %}
 
 <!--https://simpleisbetterthancomplex.com/tutorial/2017/02/18/how-to-create-user-sign-up-view.html-->
 
 {% block title %}Sign up{% endblock %}
 
+{% block content %}
+
 <div class="ui container">
-    {% block content %}
     <h2>Sign up</h2>
     <form class="ui form" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="ui button" type="submit">Sign up</button>
     </form>
-    {% endblock %}
 </div>
+
+{% endblock %}

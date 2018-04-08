@@ -14,9 +14,89 @@
     "pk": 2,
     "fields": {
       "user": 2,
-      "content": "lol me too dude",
-      "rating": 4,
+      "content": "Astounding no matter where you enjoy it, Unibroue hit it out of the park with this offering. They have other beers which can be lighter or heavier to taste, but this is pretty much the measuring stick for which all Canadian-style Trappist beers are judged. People may be put off by the cost, but it's fair to say you're getting what you pay for in terms of both flavor and effect.",
+      "rating": 5,
       "beer": 1
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "content": "less common than it should be, this is somewhat of a classic in the style, although i think quite distinct from many of its peers. its not all the way clear, but light in appearance from the tap, with a good inch of lasting white head on it, looks like a belgian. aroma is at first cloying, but it opens into rock candy, green apple, light spices, white wine, and bubblegum esters, clearly yeast driven and rather complex. the flavor has a little oxidation or staleness to it, so few of these european imports even make it to market tasting all the way fresh, but the distraction for me is minimal. huge yeast complexion, green banana, sweet dessert white wine, honey, and then out of nowhere an old school bittering hop that makes the sugar, and with it the normal trajectory of the style, halt in its tracks. the hops are soft and grassy and dried and sort of aged tasting, but their presence in this beer is well above what i have seen from other belgian brewers before. i really like what the hops do for the feel and the finish. this is really nicely carbonated and seems almost clean by the end. i also really like the alcohol coming in where it does, i can have one or two at this strength, where when they push above 9% abv i am often intimidated to do so. really distinctive and i think in some was underappreciated beer. this is just really quality tripel!",
+      "rating": 4,
+      "beer": 2
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "content": "Hazy golden colour, medium head with short retention. Good lace. Aroma of peaches, spices, herbs, pepper, fennel. Unfortunately, as you're drinking, it fades and ends in cardboard. Round palate, thick and creamy. Good carbonation. Taste of caramel, fruits, spices, herbs. Same thing as the aroma, turns to unpleasant notes. I had three bottles, all with the same problem. Subject to revision sometime in the future.",
+      "rating": 3,
+      "beer": 3
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 5,
+    "fields": {
+      "user": 2,
+      "content": "Poured from bottle into tulip, good 2+ finger cream colored head, good retention and lacing. Clear golden in the glass. Sorachi Ace hops on the nose, big lemongrass, lemon and spice. Taste follows the nose, big burst of lemongrass on the palate, candi sugar, underlying floral notes and a peppery finish. Finish carries with it the lemongrass/peppery aftertaste, not in a bad way. Good mouthfeel for a saison, pretty good body.",
+      "rating": 4,
+      "beer": 4
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 6,
+    "fields": {
+      "user": 2,
+      "content": "Dissapointed in this one. Heard hype and bought a sixer. It's metallic, one note (honey and booze) the metallic heat lingers after any decent flavor is long gone. It doesn't even have an enticing smell. The mouthfeel is thin. Fizzier than most high abv stouts. Some people appear to enjoy this, but I just dont get it. I'll be gifting some of these or cellar it till I'm desperate.",
+      "rating": 2,
+      "beer": 5
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 7,
+    "fields": {
+      "user": 2,
+      "content": "Pours a clear, orange/yellow colour. Smells like mangoes, juicy, crisp and hoppy, and a little bit of citrus. Tastes lighter than expected, slightly bitter, juicy mango, bitter, crisp, light hops, and finished with a ripe mango flavour.",
+      "rating": 4,
+      "beer": 6
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "content": "Lol taste like shit",
+      "rating": 1,
+      "beer": 8
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 9,
+    "fields": {
+      "user": 2,
+      "content": "Out of the three in this Barrelhouse Collection, this was the least disappointing. Not at all what I expected.",
+      "rating": 2,
+      "beer": 7
+    }
+  },
+  {
+    "model": "beers.review",
+    "pk": 10,
+    "fields": {
+      "user": 2,
+      "content": "Pours a clear gold with orange tinges, with a good amount of head. The head takes its time breaking and there is some really nice lacing left behind. The smell is Belgian yeasts, fruity, some spices such as clove and Belgian candi sugar. The flavor has all the elements of the nose, but I found the yeast and candi the dominant flavors. There was also a mild amount of spice, which is positive in a tripel, that lingers on the tail end. The feel is medium/full with a very decent amount of carbonation. The alcohol is well hidden in this beer.",
+      "rating": 4,
+      "beer": 10
     }
   }
 ]

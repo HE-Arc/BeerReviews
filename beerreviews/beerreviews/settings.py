@@ -18,6 +18,7 @@ load_dotenv(find_dotenv())
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -28,7 +29,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','beerreviews.srvz-webapp.he-arc.ch']
+INTERNAL_IPS = '127.0.0.1'
+
+ALLOWED_HOSTS = ['127.0.0.1','beerreviews.srvz-webapp.he-arc.ch',]
 
 LOGIN_REDIRECT_URL = 'index'
 
@@ -46,9 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
+    'beerreviews',
     'beers',
     'users',
-    'beerreviews'
 ]
 
 MIDDLEWARE = [
@@ -95,11 +98,11 @@ WSGI_APPLICATION = 'beerreviews.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': os.environ.get('GROUPNAME', os.getenv('DB_NAME')),
+        'USER': os.environ.get('GROUPNAME', os.getenv('DB_USER')),
+        'PASSWORD': os.environ.get('PASSWORD', os.getenv('DB_PASSWORD')),
+        'HOST': os.environ.get('MYSQL_HOST', os.getenv('DB_HOST')),
+        'PORT': os.environ.get('MYSQL_PORT', os.getenv('DB_PORT')),
     }
 }
 
@@ -141,3 +144,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
