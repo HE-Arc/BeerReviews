@@ -9,9 +9,6 @@ urlpatterns = [
     path('<int:beer_id>/review/create/', views.create_review, name="create_review"),
     path('random/', views.random, name="random"),
     path('top/', views.TopListView.as_view(), name="top"),
-<<<<<<< HEAD
-    path('search/', views.SearchResult.as_view(), name="search")
-=======
+    #path('search/', views.SearchResult.as_view(), name="search")
     path('search/', views.search, name="search"),
->>>>>>> 53f059e387cbc48a81b8a87c65fbb7fa8edd360a
 ]
