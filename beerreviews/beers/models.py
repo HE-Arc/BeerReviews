@@ -27,9 +27,15 @@ class MakerManager(models.Manager):
 class Style(models.Model):
     name = models.CharField(max_length=DEFAULT_LENGTH)
 
+    def __str__(self):
+        return self.name
+
 
 class Maker(models.Model):
     name = models.CharField(max_length=DEFAULT_LENGTH)
+
+    def __str__(self):
+        return self.name
 
 
 class Beer(models.Model):
@@ -70,3 +76,6 @@ class Review(models.Model):
     def get_all_object(self):
         queryset = self._meta.model.objects.all()
         return queryset
+
+    def __str__(self):
+        return self.content
