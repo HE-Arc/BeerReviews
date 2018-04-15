@@ -14,5 +14,9 @@ python manage.py runserver
 
 Loading placeholders : 
 ```
-python manage.py loaddata path/to/fixtures.json
+python manage.py loaddata maker
+python manage.py loaddata style
+python manage.py loaddata user
+python manage.py loaddata beer
+python manage.py loaddata review
 ```
