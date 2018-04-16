@@ -3,7 +3,7 @@ BeerReviews is a website that let you make beer reviews, and see the best beers 
 
 Specifications available in the wiki !
 
-PowerPoint available in documents !
+PowerPoint available in documents folder !
 
 ### Deployment : 
 
