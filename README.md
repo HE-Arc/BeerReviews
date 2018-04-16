@@ -2,6 +2,7 @@
 BeerReviews is a website that let you make beer reviews, and see the best beers from around the world !
 
 Specifications available in the wiki !
+
 PowerPoint available in documents !
 
 ### Deployment : 
